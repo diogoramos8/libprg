@@ -5,13 +5,14 @@ set(HEADERS
         "${CMAKE_CURRENT_LIST_DIR}/src/include/libprg/libprg.h"
 )
 # Add source files here manually
-set(SOURCES 
-       "${CMAKE_CURRENT_LIST_DIR}/src/libprg/sum.c"
-       "${CMAKE_CURRENT_LIST_DIR}/src/libprg/sub.c"
-       "${CMAKE_CURRENT_LIST_DIR}/src/libprg/libprg.c"       
+set(SOURCES
+        "${CMAKE_CURRENT_LIST_DIR}/src/libprg/fila.c"
+        "${CMAKE_CURRENT_LIST_DIR}/src/libprg/linear.c"
+        "${CMAKE_CURRENT_LIST_DIR}/src/libprg/pilha.c"
 )
 
-add_library(libprg)
+add_library(libprg
+        src/libprg/pilha.c)
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)
 

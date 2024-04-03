@@ -9,26 +9,33 @@
 #include <stdbool.h>
 //structs
 typedef struct fila fila_t;
+typedef struct pilha pilha_t;
 
-
-//lista
-void criarlista(int **vetor, int tam);
-void povoar(int *vetor, int tam);
-
-
-int buscalinear(int *vetor,int tam, int elem);
-int bulisentinela(int *vetor, int tam, int elem);
-int bulisentinelaord(int *vetor, int tam, int elem);
-
-int buscabinariaite(int *vetor, int tam, int elem);
-int buscabinariarec(int *vetor, int ini, int fim, int elem);
+////lista
+//void criarlista(int **vetor, int tam);
+//void povoar(int *vetor, int tam);
+//
+//
+//int buscalinear(int *vetor,int tam, int elem);
+//int bulisentinela(int *vetor, int tam, int elem);
+//int bulisentinelaord(int *vetor, int tam, int elem);
+//
+//int buscabinariaite(int *vetor, int tam, int elem);
+//int buscabinariarec(int *vetor, int ini, int fim, int elem);
 //fila
-fila_t *fila criarfila(int capacidade);
+fila_t* criarfila(int capacidade);
 bool enfileirar(fila_t *fila, int elemento);
 int desinfileirar(fila_t *fila);
 int getinicio(fila_t *fila);
 int getfinal(fila_t *fila);
-int gettamanho(fila_t *fila);
-bool isvazia(fila_t *fila);
-bool ischeia(fila_t *fila);
+int gettamanhofila(fila_t *fila);
+bool isvaziafila(fila_t *fila);
+bool ischeiafila(fila_t *fila);
+
+//pilha
+pilha_t* criarpilha(int capacidade);
+bool empilhar(pilha_t *pilha, int elemento);
+int desempilhar(pilha_t *pilha);
+int gettamanhopilha(pilha_t *pilha);
+bool ischeiapilha(pilha_t *pilha);
 #endif
