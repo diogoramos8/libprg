@@ -4,7 +4,6 @@
 #include <libprg/libprg.h>
 typedef struct pilha{
     int *vetor;
-    int topo;
     int tamanho;
     int capacidade;
 } pilha_t;
@@ -13,6 +12,7 @@ pilha_t* criarpilha(int capacidade){
     pilha_t* pilha = (pilha_t*) calloc(capacidade, sizeof(pilha_t));
     pilha->vetor = (int*) calloc(capacidade, sizeof(int));
     pilha->tamanho = 0;
+    pilha->capacidade = capacidade;
     return pilha;
 }
 

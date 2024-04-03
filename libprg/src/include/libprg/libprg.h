@@ -39,3 +39,22 @@ int desempilhar(pilha_t *pilha);
 int gettamanhopilha(pilha_t *pilha);
 bool ischeiapilha(pilha_t *pilha);
 #endif
+
+//#include <stdio.h>
+//#include <libprg/libprg.h>
+//
+//int main() {
+//    int capacidade;
+//    printf("insira a capacidade\n");
+//    scanf("%d", &capacidade);
+//
+//    pilha_t* pilha = criarpilha(10);
+//    int tam, elemento, resultado;
+//    printf("insira elemento\n");
+//    scanf("%d", &elemento);
+//    if (empilhar(pilha, elemento) == false){
+//        printf("a pilha ja esta cheia");
+//    }
+//    resultado = desempilhar(pilha);
+//    return 0;
+//}
