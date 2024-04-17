@@ -10,6 +10,7 @@
 //structs
 typedef struct fila fila_t;
 typedef struct pilha pilha_t;
+typedef struct no no_t;
 
 ////lista
 //void criarlista(int **vetor, int tam);
@@ -38,8 +39,13 @@ bool empilhar(pilha_t *pilha, int elemento);
 int desempilhar(pilha_t *pilha);
 int gettamanhopilha(pilha_t *pilha);
 bool ischeiapilha(pilha_t *pilha);
+//lista circular encadeada não ordenada (lceno)
+void adicionarlceno(no_t** inicio, int dado);
+void destruirlceno(no_t** inicio);
+no_t buscarlceno(no_t* inicio, int dado);
+bool remover(no_t** inicio, int dado);
+int getelementos(no_t** inicio, int dado);
 #endif
-
 //#include <stdio.h>
 //#include <libprg/libprg.h>
 //
