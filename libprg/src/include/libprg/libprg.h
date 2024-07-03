@@ -47,7 +47,7 @@ bool remover(no_t** inicio, int dado);
 int getelementos(no_t** inicio, int dado);
 
 //algoritimos de ordenação
-int* bubblesort(int *vetor, int tamanho);
+int* bubblesort(int *vetor, int tamanho, bool decrescente);
 
 #endif
 //#include <stdio.h>
@@ -68,3 +68,26 @@ int* bubblesort(int *vetor, int tamanho);
 //    resultado = desempilhar(pilha);
 //    return 0;
 //}
+
+//cmake_minimum_required(VERSION 3.21)
+//project(myapp C)
+//
+//set(CMAKE_C_STANDARD 17)
+//
+//include(FetchContent)
+//
+//FetchContent_Declare(
+//        libprg
+//#GIT_REPOSITORY https://github.com/diogoramos8/libprg.git
+//GIT_TAG origin/main
+//# or GIT_TAG 0.0.1
+//
+//        You can reference a local directory instead
+//URL file:///${CMAKE_CURRENT_SOURCE_DIR}/libprg
+//)
+//FetchContent_MakeAvailable(libprg)
+//
+//add_executable(myapp main.c)
+//
+//# linking libprg
+//target_link_libraries(myapp PUBLIC libprg)
