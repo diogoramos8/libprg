@@ -45,6 +45,10 @@ void destruirlceno(no_t** inicio);
 no_t buscarlceno(no_t* inicio, int dado);
 bool remover(no_t** inicio, int dado);
 int getelementos(no_t** inicio, int dado);
+
+//algoritimos de ordenação
+int* bubblesort(int *vetor, int tamanho);
+
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>
