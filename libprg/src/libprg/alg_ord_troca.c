@@ -24,3 +24,17 @@ int* bubblesort(int *vetor, int tamanho, bool decrescente) {
     return vetor;
 }
 
+int* insertionsort(int *vetor, int tamanho) {
+    int i, j, chave;
+    for (i = 1; i<tamanho-1; ++i){
+        chave = vetor[i];
+        j = i - 1;
+        while ( (j>= 0) && (vetor[j] > chave)){
+            vetor[j+1] = vetor[j];
+            j = j-1;
+        }
+        vetor[j+1] = chave;
+    }
+    return vetor;
+}
+

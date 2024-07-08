@@ -48,6 +48,7 @@ int getelementos(no_t** inicio, int dado);
 
 //algoritimos de ordenação
 int* bubblesort(int *vetor, int tamanho, bool decrescente);
+int* insertionsort(int *vetor, int tamanho);
 
 #endif
 //#include <stdio.h>
