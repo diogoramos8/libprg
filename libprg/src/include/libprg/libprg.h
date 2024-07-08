@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <limits.h>
+#include <time.h>
+#include<sys/time.h>
 //structs
 typedef struct fila fila_t;
 typedef struct pilha pilha_t;
@@ -48,8 +51,9 @@ int getelementos(no_t** inicio, int dado);
 
 //algoritimos de ordenação
 int* bubblesort(int *vetor, int tamanho, bool decrescente);
-int* insertionsort(int *vetor, int tamanho);
-
+int* insertionsort(int *vetor, int tamanho, bool decrescente);
+int* selectionsort(int *vetor, int tamanho, bool decrescente);
+int* povoarvetor(int tamanho);
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>
@@ -84,7 +88,7 @@ int* insertionsort(int *vetor, int tamanho);
 //# or GIT_TAG 0.0.1
 //
 //        You can reference a local directory instead
-//URL file:///${CMAKE_CURRENT_SOURCE_DIR}/libprg
+//URL file:///${CMAKE_CURRENT_SOURCE_DIR}/../libprg
 //)
 //FetchContent_MakeAvailable(libprg)
 //
