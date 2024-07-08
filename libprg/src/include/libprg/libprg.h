@@ -96,3 +96,30 @@ int* povoarvetor(int tamanho);
 //
 //# linking libprg
 //target_link_libraries(myapp PUBLIC libprg)
+
+#include <stdio.h>
+#include <libprg/libprg.h>
+
+
+//int main() {
+//    struct timeval inicio, fim;
+//    printf("Hello, World!\n");
+//    printf("insira tamanho do vetor\n");
+//    int tamanho;
+//    scanf("%d", &tamanho);
+//    printf("decrescente =0, crescente =1\n");
+//    bool decrescente;
+//    int bol;
+//    scanf("%d", &bol);
+//    decrescente = bol;
+//    int *vetor = povoarvetor(tamanho);
+//    gettimeofday(&inicio, 0);
+//    int *ord = selectionsort(vetor, tamanho, decrescente);
+//    gettimeofday(&fim, 0);
+//    long seg = fim.tv_sec - inicio.tv_sec;
+//    long mseg = fim.tv_usec - inicio.tv_usec;
+//    double tempo_total = seg + mseg * 1e-6;
+//
+//    printf("Tempo gasto: %f segundos.\n", tempo_total);
+//    return 0;
+//}
