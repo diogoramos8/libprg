@@ -54,6 +54,11 @@ int* bubblesort(int *vetor, int tamanho, bool decrescente);
 int* insertionsort(int *vetor, int tamanho, bool decrescente);
 int* selectionsort(int *vetor, int tamanho, bool decrescente);
 int* povoarvetor(int tamanho);
+int* mergesort(int *vetor, int esquerda, int direita);
+int* merge(int *vetor, int esquerda, int meio, int direita);
+int* quicksort(int *vetor, int inicio, int fim);
+int particiona(int *vetor, int inicio, int fim);
+void trocarposicao(int *vetora, int *vetorb);
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>
@@ -97,10 +102,10 @@ int* povoarvetor(int tamanho);
 //# linking libprg
 //target_link_libraries(myapp PUBLIC libprg)
 
-#include <stdio.h>
-#include <libprg/libprg.h>
-
-
+//#include <stdio.h>
+//#include <libprg/libprg.h>
+//
+//
 //int main() {
 //    struct timeval inicio, fim;
 //    printf("Hello, World!\n");
