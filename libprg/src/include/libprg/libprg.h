@@ -58,7 +58,7 @@ int* mergesort(int *vetor, int esquerda, int direita);
 int* merge(int *vetor, int esquerda, int meio, int direita);
 int* quicksort(int *vetor, int inicio, int fim);
 int particiona(int *vetor, int inicio, int fim);
-void trocarposicao(int *vetora, int *vetorb);
+
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>
@@ -105,26 +105,60 @@ void trocarposicao(int *vetora, int *vetorb);
 //#include <stdio.h>
 //#include <libprg/libprg.h>
 //
-//
+
 //int main() {
 //    struct timeval inicio, fim;
 //    printf("Hello, World!\n");
 //    printf("insira tamanho do vetor\n");
 //    int tamanho;
 //    scanf("%d", &tamanho);
-//    printf("decrescente =0, crescente =1\n");
-//    bool decrescente;
-//    int bol;
-//    scanf("%d", &bol);
-//    decrescente = bol;
+////    printf("decrescente =0, crescente =1\n");
+////    bool decrescente;
+////    int bol;
+////    scanf("%d", &bol);
+////    decrescente = bol;
 //    int *vetor = povoarvetor(tamanho);
 //    gettimeofday(&inicio, 0);
-//    int *ord = selectionsort(vetor, tamanho, decrescente);
+//    int *ord = quicksort(vetor, 0, tamanho);
 //    gettimeofday(&fim, 0);
 //    long seg = fim.tv_sec - inicio.tv_sec;
 //    long mseg = fim.tv_usec - inicio.tv_usec;
 //    double tempo_total = seg + mseg * 1e-6;
+////    for (int i =0; i<tamanho; i++){
+////        printf("%d: %d\n", i, vetor[i]);
+////    }
+//    printf("Quick Tempo gasto: %f segundos.\n", tempo_total);
+//    gettimeofday(&inicio, 0);
+//    ord = mergesort(vetor, 0, tamanho-1);
+//    gettimeofday(&fim, 0);
+//    seg = fim.tv_sec - inicio.tv_sec;
+//    mseg = fim.tv_usec - inicio.tv_usec;
+//    tempo_total = seg + mseg * 1e-6;
+//    printf("Merge Tempo gasto: %f segundos.\n", tempo_total);
 //
-//    printf("Tempo gasto: %f segundos.\n", tempo_total);
+//    gettimeofday(&inicio, 0);
+//    ord = selectionsort(vetor, tamanho, 1);
+//    gettimeofday(&fim, 0);
+//    seg = fim.tv_sec - inicio.tv_sec;
+//    mseg = fim.tv_usec - inicio.tv_usec;
+//    tempo_total = seg + mseg * 1e-6;
+//    printf("Selection Tempo gasto: %f segundos.\n", tempo_total);
+//
+//    gettimeofday(&inicio, 0);
+//    ord = bubblesort(vetor, tamanho, 1);
+//    gettimeofday(&fim, 0);
+//    seg = fim.tv_sec - inicio.tv_sec;
+//    mseg = fim.tv_usec - inicio.tv_usec;
+//    tempo_total = seg + mseg * 1e-6;
+//    printf("Bubble Tempo gasto: %f segundos.\n", tempo_total);
+//
+//    gettimeofday(&inicio, 0);
+//    ord = insertionsort(vetor, tamanho, 1);
+//    gettimeofday(&fim, 0);
+//    seg = fim.tv_sec - inicio.tv_sec;
+//    mseg = fim.tv_usec - inicio.tv_usec;
+//    tempo_total = seg + mseg * 1e-6;
+//    printf("Insertion Tempo gasto: %f segundos.\n", tempo_total);
+//
 //    return 0;
 //}

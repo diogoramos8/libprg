@@ -1,10 +1,13 @@
 //
 // Created by aluno on 03/07/24.
 #include "libprg/libprg.h"
-void trocarposicao(int *vetora, int *vetorb){
-    int *aux = vetorb;
-    vetorb = vetora;
-    vetora = aux;
+
+void trocarposicao(int *vetor,int a, int b);
+
+void trocarposicao(int *vetor, int a, int b){
+    int aux = vetor[b];
+    vetor[b] = vetor[a];
+    vetor[a] = aux;
 }
 
 int* bubblesort(int *vetor, int tamanho, bool decrescente) {
@@ -13,16 +16,12 @@ int* bubblesort(int *vetor, int tamanho, bool decrescente) {
         for (j = 0; j < (tamanho - i -1); ++j) {
             if (decrescente == 0) {
                 if (vetor[j] < vetor[j + 1]) {
-                    aux = vetor[j];
-                    vetor[j] = vetor[j + 1];
-                    vetor[j + 1] = aux;
+                    trocarposicao(vetor,j+1, j);
                 }
             }
             else{
                 if (vetor[j] > vetor[j + 1]) {
-                    aux = vetor[j];
-                    vetor[j] = vetor[j + 1];
-                    vetor[j + 1] = aux;
+                    trocarposicao(vetor,j+1, j);
                 }
             }
         }
@@ -68,9 +67,7 @@ int* selectionsort(int *vetor, int tamanho, bool decrescente){
             }
         }
         if (i != min){
-            aux = vetor[i];
-            vetor[i] = vetor[min];
-            vetor[min] = aux;
+            trocarposicao(vetor,min, i);
         }
     }
     return vetor;
@@ -132,15 +129,11 @@ int particiona(int *vetor, int inicio, int fim){
         for (int j = inicio; j < fim; j++){
             if (vetor[j] <= pivo){
                 i++;
-                aux = vetor[j];
-                vetor[j] = vetor[i];
-                vetor[i] = aux;
+                trocarposicao(vetor,i, j);
             }
         }
         i++;
-    aux = vetor[fim];
-    vetor[fim] = vetor[i];
-    vetor[i] = aux;
+    trocarposicao(vetor,i, fim);
     return i;
 }
 
