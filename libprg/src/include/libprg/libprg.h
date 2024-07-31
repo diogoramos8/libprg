@@ -14,7 +14,7 @@
 typedef struct fila fila_t;
 typedef struct pilha pilha_t;
 typedef struct no no_t;
-
+typedef struct arvore arvore_t;
 ////lista
 //void criarlista(int **vetor, int tam);
 //void povoar(int *vetor, int tam);
@@ -43,11 +43,11 @@ int desempilhar(pilha_t *pilha);
 int gettamanhopilha(pilha_t *pilha);
 bool ischeiapilha(pilha_t *pilha);
 //lista circular encadeada não ordenada (lceno)
-void adicionarlceno(no_t** inicio, int dado);
-void destruirlceno(no_t** inicio);
-no_t buscarlceno(no_t* inicio, int dado);
-bool remover(no_t** inicio, int dado);
-int getelementos(no_t** inicio, int dado);
+void adicionarlceno(arvore_t** inicio, int dado);
+void destruirlceno(arvore_t** inicio);
+arvore_t buscarlceno(arvore_t* inicio, int dado);
+bool remover(arvore_t** inicio, int dado);
+int getelementos(arvore_t** inicio, int dado);
 
 //algoritimos de ordenação
 int* bubblesort(int *vetor, int tamanho, bool decrescente);
@@ -58,6 +58,15 @@ int* mergesort(int *vetor, int esquerda, int direita);
 int* merge(int *vetor, int esquerda, int meio, int direita);
 int* quicksort(int *vetor, int inicio, int fim);
 int particiona(int *vetor, int inicio, int fim);
+
+//jesus é o jardineiro
+arvore_t *criar_no(int valor);
+void destruir_no(arvore_t *no);
+arvore_t *inserir_valor(arvore_t *raiz, int valor);
+bool busca(arvore_t *raiz, int valor);
+arvore_t *remover_valor(arvore_t *raiz, int valor);
+arvore_t *plantar(int tam);
+
 
 #endif
 //#include <stdio.h>
@@ -173,14 +182,14 @@ int particiona(int *vetor, int inicio, int fim);
 //    char *nome;
 //    char *email;
 //} pessoa_t;
-//typedef struct no {
+//typedef struct arvore {
 //    char *chave;
 //    pessoa_t *valor;
-//    struct no *prox;
-//} no_t;
+//    struct arvore *prox;
+//} arvore_t;
 //typedef struct dicionario {
 //    int tamanho; // tamanho do vetor
-//    no_t **vetor;
+//    arvore_t **vetor;
 //} dicionario_t;
 //
 //dicionario_t *criar_dicionario(int m) {
@@ -192,7 +201,7 @@ int particiona(int *vetor, int inicio, int fim);
 //        return NULL;
 //    }
 //    d->tamanho = m;
-//    if ((d->vetor = calloc(m, sizeof(no_t *))) == NULL) {
+//    if ((d->vetor = calloc(m, sizeof(arvore_t *))) == NULL) {
 //        return NULL;
 //    }
 //// O calloc já deve colocar NULL, mas deixo aqui de forma explícita
@@ -217,11 +226,11 @@ int particiona(int *vetor, int inicio, int fim);
 //}
 //
 //
-//void destruir_no(no_t *no) {
-//    if (no != NULL) {
-//        free(no->chave);
-//        destruir_pessoa(no->valor);
-//        free(no);
+//void destruir_no(arvore_t *arvore) {
+//    if (arvore != NULL) {
+//        free(arvore->chave);
+//        destruir_pessoa(arvore->valor);
+//        free(arvore);
 //    }
 //}
 //
@@ -250,26 +259,26 @@ int particiona(int *vetor, int inicio, int fim);
 //
 //bool inserir(dicionario_t *d, char *chave, pessoa_t *valor) {
 //    int indice = hash(chave, d->tamanho);
-//    no_t *no = malloc(sizeof(no_t));
-//    if (no == NULL) {
+//    arvore_t *arvore = malloc(sizeof(arvore_t));
+//    if (arvore == NULL) {
 //        return false;
 //    }
 //    // strdup reserva memória para fazer a cópia da string. Presente em string.h padrão
 //    // C23 https://en.cppreference.com/w/c/string/byte/strdup
-//    no->chave = strdup(chave);
-//    if (no->chave == NULL) {
-//        free(no);
+//    arvore->chave = strdup(chave);
+//    if (arvore->chave == NULL) {
+//        free(arvore);
 //        return false;
 //    }
-//    no->valor = valor;
+//    arvore->valor = valor;
 //    if (d->vetor[indice] != NULL){
-//        d->vetor[indice]->prox = no;
-//        no->prox = NULL;
+//        d->vetor[indice]->prox = arvore;
+//        arvore->prox = NULL;
 //
 //    }
 //        // se houver colisão é necessário usar uma lista encadeada
-//    else{ no->prox = NULL;
-//        d->vetor[indice] = no;}
+//    else{ arvore->prox = NULL;
+//        d->vetor[indice] = arvore;}
 //    return true;
 //}
 //
@@ -307,7 +316,7 @@ int particiona(int *vetor, int inicio, int fim);
 //    pessoa_t *p = malloc(sizeof(pessoa_t));
 //    pessoa_t *j = malloc(sizeof(pessoa_t));
 //    // https://en.cppreference.com/w/c/string/byte/strdup
-//    // strdup reserva memória para fazer a cópia da string. Presente no padrão C23
+//    // strdup reserva memória para fazer a cópia da string. Presente arvore padrão C23
 //    p->cpf = strdup("123");
 //    p->nome = strdup("Juca");
 //    p->email = strdup("juca@example.ogr");
