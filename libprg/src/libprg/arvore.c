@@ -34,7 +34,7 @@ free(no);
 }
 
 
-// todo nó é raiz de uma subárvore
+// tod0 nó é raiz de uma subárvore
 arvore_t *inserir_valor(arvore_t *raiz, int valor){
 if (raiz == NULL) {
 return criar_no(valor);
