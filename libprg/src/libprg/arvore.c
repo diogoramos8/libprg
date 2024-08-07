@@ -18,12 +18,32 @@ arvore_t *criar_no(int valor){
 
 arvore_t *plantar(int tam){
     srand(time(NULL));
-    arvore_t *a = criar_no(rand()%100);
-
+    arvore_t *a = criar_no(rand());
+    arvore_t *arvore = a;
     for (int i = 0; i < tam; i++){
-        int valor = rand()%100;
-
+        int valor = rand();
+        int j=0;
+        arvore = a;
+        while(j<1){
+            if (valor < arvore->valor){
+                if (arvore->esquerda == NULL){
+                    arvore->esquerda = criar_no(valor);
+                    j=1;
+                } else {
+                    arvore = arvore->esquerda;
+                }
+            }
+            else {
+                if (arvore->direita == NULL){
+                    arvore->direita = criar_no(valor);
+                    j=1;
+                } else {
+                    arvore = arvore->direita;
+                }
+            }
+        }
     }
+    return arvore;
 }
 void destruir_no(arvore_t *no) {
 if (no != NULL) {
@@ -85,3 +105,58 @@ if (valor < raiz->valor) {
 }
 return raiz;
 }
+int maiorarvore(arvore_t *no){
+    while (no->direita != NULL){
+        no = no->direita;
+    }
+    return no->valor;
+}
+
+int menorarvore(arvore_t *no){
+    while (no->esquerda != NULL){
+        no = no->esquerda;
+    }
+    return no->valor;
+}
+
+//#include <stdio.h>
+//#include <libprg/libprg.h>
+//int main(void) {
+//    struct timeval inicio, fim;
+//
+//
+//    printf("Hello, World!\n");
+//    gettimeofday(&inicio, 0);
+//
+//    arvore_t *arveres = plantar(100000);
+//
+//    gettimeofday(&fim, 0);
+//
+//    long seg = fim.tv_sec - inicio.tv_sec;
+//    long mseg = fim.tv_usec - inicio.tv_usec;
+//    double tempo_total = seg + mseg * 1e-6;
+//
+//    printf("Tempo gasto: %f segundos.\n", tempo_total);
+//    gettimeofday(&inicio, 0);
+//    int maior = maiorarvore(arveres);
+//    gettimeofday(&fim, 0);
+//
+//    seg = fim.tv_sec - inicio.tv_sec;
+//    mseg = fim.tv_usec - inicio.tv_usec;
+//    tempo_total = seg + mseg * 1e-6;
+//
+//    printf("mais a direita:%d\n", maior);
+//    printf("Tempo gasto: %f segundos.\n", tempo_total);
+//
+//    gettimeofday(&inicio, 0);
+//    int menor = menorarvore(arveres);
+//    gettimeofday(&fim, 0);
+//
+//    seg = fim.tv_sec - inicio.tv_sec;
+//    mseg = fim.tv_usec - inicio.tv_usec;
+//    tempo_total = seg + mseg * 1e-6;
+//
+//    printf("mais a esquerda:%d\n", menor);
+//    printf("Tempo gasto: %f segundos.\n", tempo_total);
+//    return 0;
+//}

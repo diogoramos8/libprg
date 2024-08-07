@@ -1,7 +1,7 @@
 //
 // Created by aluno on 13/03/24.
 //
-
+// https://emersonmello.me/ensino/prg2/tempo/
 #ifndef LIBPRG_LIBPRG_H
 #define LIBPRG_LIBPRG_H
 #include <stdio.h>
@@ -43,11 +43,11 @@ int desempilhar(pilha_t *pilha);
 int gettamanhopilha(pilha_t *pilha);
 bool ischeiapilha(pilha_t *pilha);
 //lista circular encadeada não ordenada (lceno)
-void adicionarlceno(arvore_t** inicio, int dado);
-void destruirlceno(arvore_t** inicio);
-arvore_t buscarlceno(arvore_t* inicio, int dado);
-bool remover(arvore_t** inicio, int dado);
-int getelementos(arvore_t** inicio, int dado);
+void adicionarlceno(no_t** inicio, int dado);
+void destruirlceno(no_t** inicio);
+no_t buscarlceno(no_t* inicio, int dado);
+bool remover(no_t** inicio, int dado);
+int getelementos(no_t** inicio, int dado);
 
 //algoritimos de ordenação
 int* bubblesort(int *vetor, int tamanho, bool decrescente);
@@ -66,8 +66,8 @@ arvore_t *inserir_valor(arvore_t *raiz, int valor);
 bool busca(arvore_t *raiz, int valor);
 arvore_t *remover_valor(arvore_t *raiz, int valor);
 arvore_t *plantar(int tam);
-
-
+int maiorarvore(arvore_t *no);
+int menorarvore(arvore_t *no);
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>
