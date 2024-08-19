@@ -35,6 +35,7 @@ int getfinal(fila_t *fila);
 int gettamanhofila(fila_t *fila);
 bool isvaziafila(fila_t *fila);
 bool ischeiafila(fila_t *fila);
+arvore_t desinfileirarvore(fila_t *fila);
 
 //pilha
 pilha_t* criarpilha(int capacidade);
@@ -68,6 +69,12 @@ arvore_t *remover_valor(arvore_t *raiz, int valor);
 arvore_t *plantar(int tam);
 int maiorarvore(arvore_t *no);
 int menorarvore(arvore_t *no);
+void inorder(arvore_t *no);
+void preorder(arvore_t *no);
+void posorder(arvore_t *no);
+void percurso_largura(arvore_t *no, fila_t *fila);
+fila_t* criarfilaarvore(int capacidade);
+bool enfileirararvore(fila_t *fila, arvore_t *elemento);
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>

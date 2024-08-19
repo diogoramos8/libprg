@@ -9,19 +9,22 @@ typedef struct arvore {
     struct arvore *direita;
 } arvore_t;
 
-arvore_t *criar_no(int valor){
-    arvore_t *no = (arvore_t *) malloc(sizeof(arvore_t));
-    no->valor = valor;
-    no->esquerda = no->direita = NULL;
-    return no;
-}
+typedef struct fila{
+    struct arvore *vetor;
+    int inicio;
+    int fim;
+    int tamanho;
+    int capacidade;
+} fila_t;
+
+
 
 arvore_t *plantar(int tam){
     srand(time(NULL));
-    arvore_t *a = criar_no(rand());
+    arvore_t *a = criar_no(rand()%100);
     arvore_t *arvore = a;
     for (int i = 0; i < tam; i++){
-        int valor = rand();
+        int valor = rand()%100;
         int j=0;
         arvore = a;
         while(j<1){
@@ -45,6 +48,7 @@ arvore_t *plantar(int tam){
     }
     return arvore;
 }
+//TODO arrumar plantar
 void destruir_no(arvore_t *no) {
 if (no != NULL) {
 destruir_no(no->esquerda);
@@ -118,6 +122,82 @@ int menorarvore(arvore_t *no){
     }
     return no->valor;
 }
+
+void inorder(arvore_t *no){
+    if (no!= NULL){
+        inorder(no->esquerda);
+        printf("%d\n", no->valor);
+        inorder(no->direita);
+    }
+}
+
+void preorder(arvore_t *no){
+    if (no!= NULL){
+        printf("%d", no->valor);
+        inorder(no->esquerda);
+        inorder(no->direita);
+    }
+}
+
+void posorder(arvore_t *no){
+    if (no != NULL){
+        inorder(no->esquerda);
+        inorder(no->direita);
+        printf("%d", no->valor);
+    }
+}
+
+fila_t* criarfilaarvore(int capacidade){
+    fila_t* fila = (fila_t*) calloc(capacidade, sizeof(fila_t));
+    fila->vetor = (arvore_t *) calloc(capacidade, sizeof(arvore_t));
+    fila->inicio = 0;
+    fila->fim = 0;
+    fila->tamanho = 0;
+    fila->capacidade = capacidade;
+    return fila;
+}
+
+
+bool enfileirararvore(fila_t *fila, arvore_t *elemento){
+    bool full = ischeiafila(fila);
+    if (full != true){
+        fila->vetor[fila->fim] = *elemento;
+        fila->fim++;
+        if (fila->fim > fila->capacidade){fila->fim = 0;}
+        fila->tamanho++;
+        return true;
+    }
+    return false;
+}
+arvore_t desinfileirarvore(fila_t *fila){
+        fila->inicio++;
+        if (fila->inicio > fila->capacidade){
+            fila->inicio = 0;
+            fila->tamanho--;
+            return fila->vetor[fila->capacidade];
+
+            ;}
+        fila->tamanho--;
+        return fila->vetor[fila->inicio-1];
+}
+
+
+
+void percurso_largura(arvore_t *no, fila_t *fila){
+    while(no !=NULL) {
+        printf("%d", no->valor);
+        if (no->esquerda != NULL) {
+            enfileirararvore(fila, no->esquerda);
+        }
+        if (no->direita != NULL) {
+            enfileirararvore(fila, no->direita);
+        }
+        *no = desinfileirarvore(fila);
+    }
+}
+
+
+
 
 //#include <stdio.h>
 //#include <libprg/libprg.h>
