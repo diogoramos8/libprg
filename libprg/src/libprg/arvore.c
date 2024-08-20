@@ -194,7 +194,7 @@ void percurso_largura(arvore_t *no, fila_t *fila){
 //    printf("Hello, World!\n");
 //    gettimeofday(&inicio, 0);
 //
-//    arvore_t *arveres = plantar(100000);
+//    arvore_t *arveres = plantar(10);
 //
 //    gettimeofday(&fim, 0);
 //
@@ -204,6 +204,12 @@ void percurso_largura(arvore_t *no, fila_t *fila){
 //
 //    printf("Tempo gasto: %f segundos.\n", tempo_total);
 //    gettimeofday(&inicio, 0);
+//    inorder(arveres);
+//    printf("\n");
+//    preorder(arveres);
+//    printf("\n");
+//    posorder(arveres);
+//    printf("\n");
 //    int maior = maiorarvore(arveres);
 //    gettimeofday(&fim, 0);
 //
