@@ -120,15 +120,15 @@ void inorder(arvore_t *no){
 void preorder(arvore_t *no){
     if (no!= NULL){
         printf("%d ", no->valor);
-        inorder(no->esquerda);
-        inorder(no->direita);
+        preorder(no->esquerda);
+        preorder(no->direita);
     }
 }
 
 void posorder(arvore_t *no){
     if (no != NULL){
-        inorder(no->esquerda);
-        inorder(no->direita);
+        posorder(no->esquerda);
+        posorder(no->direita);
         printf("%d ", no->valor);
     }
 }
