@@ -28,7 +28,7 @@ arvore_t *criar_no(int valor){
 arvore_t *plantar(int tam){
     srand(time(NULL));
     arvore_t *arvore = criar_no(rand()%100);
-    for (int i = 0; i < tam-1; i++){
+    for (int i = 0; i < tam; i++){
         int valor = rand()%100;
         arvore = inserir_valor(arvore, valor);
     }
