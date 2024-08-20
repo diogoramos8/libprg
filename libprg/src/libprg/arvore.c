@@ -21,30 +21,10 @@ typedef struct fila{
 
 arvore_t *plantar(int tam){
     srand(time(NULL));
-    arvore_t *a = criar_no(rand()%100);
-    arvore_t *arvore = a;
+    arvore_t *arvore ;
     for (int i = 0; i < tam; i++){
         int valor = rand()%100;
-        int j=0;
-        arvore = a;
-        while(j<1){
-            if (valor < arvore->valor){
-                if (arvore->esquerda == NULL){
-                    arvore->esquerda = criar_no(valor);
-                    j=1;
-                } else {
-                    arvore = arvore->esquerda;
-                }
-            }
-            else {
-                if (arvore->direita == NULL){
-                    arvore->direita = criar_no(valor);
-                    j=1;
-                } else {
-                    arvore = arvore->direita;
-                }
-            }
-        }
+        arvore = inserir_valor(arvore, valor);
     }
     return arvore;
 }
