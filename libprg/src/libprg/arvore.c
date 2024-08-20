@@ -112,14 +112,14 @@ int menorarvore(arvore_t *no){
 void inorder(arvore_t *no){
     if (no!= NULL){
         inorder(no->esquerda);
-        printf("%d\n", no->valor);
+        printf("%d ", no->valor);
         inorder(no->direita);
     }
 }
 
 void preorder(arvore_t *no){
     if (no!= NULL){
-        printf("%d", no->valor);
+        printf("%d ", no->valor);
         inorder(no->esquerda);
         inorder(no->direita);
     }
@@ -129,7 +129,7 @@ void posorder(arvore_t *no){
     if (no != NULL){
         inorder(no->esquerda);
         inorder(no->direita);
-        printf("%d", no->valor);
+        printf("%d ", no->valor);
     }
 }
 
