@@ -17,7 +17,13 @@ typedef struct fila{
     int capacidade;
 } fila_t;
 
-
+arvore_t *criar_no(int valor){
+    arvore_t *no = (arvore_t *) malloc(sizeof(arvore_t));
+    no->valor = valor;
+    no->esquerda =NULL;
+    no->direita = NULL;
+    return no;
+}
 
 arvore_t *plantar(int tam){
     srand(time(NULL));
