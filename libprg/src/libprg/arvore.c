@@ -171,7 +171,7 @@ arvore_t desinfileirarvore(fila_t *fila){
 
 void percurso_largura(arvore_t *no, fila_t *fila){
     while(no !=NULL) {
-        printf("%d", no->valor);
+        printf("%d ", no->valor);
         if (no->esquerda != NULL) {
             enfileirararvore(fila, no->esquerda);
         }
