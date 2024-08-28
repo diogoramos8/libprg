@@ -199,8 +199,7 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
                 no_avl_t *aux = v->direita;
                 free(v);
                 v = aux;
-                destruir_no_avl(aux);
-                aux = NULL;
+
             }else {
                 destruir_no_avl(v);
                 v = NULL;
