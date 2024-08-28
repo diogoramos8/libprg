@@ -195,12 +195,10 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
                 no_avl_t *aux = v->esquerda;
                 destruir_no_avl(v);
                 v = aux;
-                destruir_no_avl(aux);
             } else if(v->direita != NULL){
                 no_avl_t *aux = v->direita;
                 destruir_no_avl(v);
                 v = aux;
-                destruir_no_avl(aux);
             }else {
                 destruir_no_avl(v);
                 v = NULL;
