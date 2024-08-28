@@ -98,6 +98,7 @@ void preorder_avl(no_avl_t *no);
 void posorder_avl(no_avl_t *no);
 void imprimir_arvore (no_avl_t no, int altura);
 void verarvore(no_avl_t *no, int altura);
+void adicionador(no_avl_t *no, int tam);
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>
