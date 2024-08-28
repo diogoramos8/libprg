@@ -22,7 +22,7 @@ no_avl_t *criar_no_avl(int valor){
 }
 
 no_avl_t *plantar_avl(int tam){
-    srand(time(NULL));
+    srand(1);
     no_avl_t *arvore = criar_no_avl((rand()%100)+1);
     for (int i = 0; i < tam-1; i++){
         int valor = (rand()%100)+1;
@@ -33,8 +33,8 @@ no_avl_t *plantar_avl(int tam){
 
 void destruir_no_avl(no_avl_t *no) {
     if (no != NULL) {
-        destruir_no(no->esquerda);
-        destruir_no(no->direita);
+        destruir_no_avl(no->esquerda);
+        destruir_no_avl(no->direita);
         free(no);
     }
 }
@@ -191,17 +191,17 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
     } else { // valor == v−>valor
         if (v->esquerda == NULL || v->direita == NULL) { // nó folha ou nó com um filho
             if(v->esquerda != NULL){
-                arvore_t *aux = v->esquerda;
-                destruir_no(v->esquerda);
+                no_avl_t *aux = v->esquerda;
+                destruir_no_avl(v->esquerda);
                 v = aux;
-                destruir_no(aux);
+                destruir_no_avl(aux);
             } else if(v->direita != NULL){
-                arvore_t *aux = v->direita;
-                destruir_no(v->direita);
+                no_avl_t *aux = v->direita;
+                destruir_no_avl(v->direita);
                 v = aux;
-                destruir_no(aux);
+                destruir_no_avl(aux);
             }else {
-                destruir_no(v);
+                destruir_no_avl(v);
             }
 
         } else{ // nó com dois filhos
