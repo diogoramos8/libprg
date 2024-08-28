@@ -174,7 +174,7 @@ no_avl_t *inserir(no_avl_t *v, int valor) {
         v = criar_no_avl(valor);
     } else if (valor < v->valor) {
         v->esquerda = inserir(v->esquerda, valor);
-    } else if (valor > v-valor) {
+    } else if (valor > v->valor) {
         v->direita = inserir(v->direita, valor);
     }
     v->altura= 1 + max(altura(v->esquerda), altura(v->direita));
@@ -196,8 +196,10 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
                 v = aux;
                 destruir_no(aux);
             } else if(v->direita != NULL){
-                v = v->direita;
-                v->direita;
+                arvore_t *aux = v->direita;
+                destruir_no(v->direita);
+                v = aux;
+                destruir_no(aux);
             }else {
                 destruir_no(v);
             }
