@@ -36,6 +36,7 @@ void destruir_no_avl(no_avl_t *no) {
         destruir_no_avl(no->esquerda);
         destruir_no_avl(no->direita);
         free(no);
+        no = NULL;
     }
 }
 
@@ -214,7 +215,7 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
         }
     }
     if (v != NULL) {
-        v->altura = 1 + max(altura(v->esquerda), altura(v->direita));
+        v->altura = 1 + (max(altura(v->esquerda), altura(v->direita)));
         v = balancear(v); // é necessário balancear após cada remoção
     }
     return v;
