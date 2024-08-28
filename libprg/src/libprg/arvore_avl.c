@@ -22,7 +22,7 @@ no_avl_t *criar_no_avl(int valor){
 }
 
 no_avl_t *plantar_avl(int tam){
-    srand(time(NULL));
+    srand(1);
     no_avl_t *arvore = criar_no_avl((rand()%100)+1);
     for (int i = 0; i < tam-1; i++){
         int valor = (rand()%100)+1;
