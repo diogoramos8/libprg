@@ -31,12 +31,12 @@ no_avl_t *plantar_avl(int tam){
     return arvore;
 }
 
-void destruir_no_avl(no_avl_t *no) {
-    if (no != NULL) {
-        destruir_no_avl(no->esquerda);
-        destruir_no_avl(no->direita);
-        free(no);
-        no = NULL;
+void destruir_no_avl(no_avl_t **no) {
+    if (*no != NULL) {
+        destruir_no_avl(&(*no)->esquerda);
+        destruir_no_avl(&(*no)->direita);
+        free(*no);
+        *no = NULL;
     }
 }
 

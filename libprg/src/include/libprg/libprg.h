@@ -76,6 +76,8 @@ void posorder(arvore_t *no);
 void percurso_largura(arvore_t *no, fila_t *fila);
 fila_t* criarfilaarvore(int capacidade);
 bool enfileirararvore(fila_t *fila, arvore_t *elemento);
+
+//arvore avl
 int altura(no_avl_t *v);
 int fator_balanceamento(no_avl_t *v);
 no_avl_t *rotacao_esquerda(no_avl_t *v);
@@ -87,7 +89,7 @@ no_avl_t *removerb(no_avl_t *v, int valor);
 no_avl_t *criar_no_avl(int valor);
 no_avl_t *plantar_avl(int tam);
 no_avl_t *inserir(no_avl_t *v, int valor);
-void destruir_no_avl(no_avl_t *no);
+void destruir_no_avl(no_avl_t **no);
 bool busca_avl(no_avl_t *raiz, int valor);
 int maiorarvore_avl(no_avl_t *no);
 int menorarvore_avl(no_avl_t *no);
