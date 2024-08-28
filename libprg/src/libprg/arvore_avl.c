@@ -236,7 +236,6 @@ void verarvore(no_avl_t *no, int altura) {
 }
 
 void adicionador(no_avl_t *no, int tam){
-    int insert;
     int valor;
     for (int i = 0; i < tam; i++){
         valor = (rand()%100)+1;
