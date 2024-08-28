@@ -96,6 +96,7 @@ int menorarvore_avl(no_avl_t *no);
 void inorder_avl(no_avl_t *no);
 void preorder_avl(no_avl_t *no);
 void posorder_avl(no_avl_t *no);
+void imprimir_arvore (no_avl_t no, int altura);
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>

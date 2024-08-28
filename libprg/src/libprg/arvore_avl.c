@@ -81,7 +81,7 @@ void posorder_avl(no_avl_t *no){
     if (no != NULL){
         posorder_avl(no->esquerda);
         posorder_avl(no->direita);
-        printf("%d ", no->valor);
+        printf("%d altura:%d", no->valor, no->altura);
     }
 }
 
@@ -220,3 +220,4 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
     }
     return v;
 }
+
