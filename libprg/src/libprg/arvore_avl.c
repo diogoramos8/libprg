@@ -192,14 +192,14 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
     } else { // valor == v−>valor
         if (v->esquerda == NULL || v->direita == NULL) { // nó folha ou nó com um filho
             if(v->esquerda != NULL){
-                no_avl_t aux = v->esquerda;
+                no_avl_t *aux = v->esquerda;
                 destruir_no_avl(v);
                 v = aux;
                 destruir_no_avl(aux);
                 v = NULL;
                 aux = NULL;
             } else if(v->direita != NULL){
-                no_avl_t aux = v->direita;
+                no_avl_t *aux = v->direita;
                 destruir_no_avl(v);
                 v = aux;
                 destruir_no_avl(aux);
