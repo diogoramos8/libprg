@@ -31,12 +31,12 @@ no_avl_t *plantar_avl(int tam){
     return arvore;
 }
 
-void destruir_no_avl(no_avl_t **no) {
-    if (*no != NULL) {
-        destruir_no_avl(&(*no)->esquerda);
-        destruir_no_avl(&(*no)->direita);
-        free(*no);
-        *no = NULL;
+void destruir_no_avl(no_avl_t *no) {
+    if (no != NULL) {
+        destruir_no_avl(no->esquerda);
+        destruir_no_avl(no->direita);
+        free(no);
+        no = NULL;
     }
 }
 
@@ -203,6 +203,7 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
                 destruir_no_avl(aux);
             }else {
                 destruir_no_avl(v);
+                v = NULL;
             }
 
         } else{ // nó com dois filhos
