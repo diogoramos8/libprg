@@ -221,3 +221,16 @@ no_avl_t *removerb(no_avl_t *v, int valor) {
     return v;
 }
 
+void verarvore(no_avl_t *no, int altura) {
+    if (no != NULL) {
+
+        verarvore(no->direita, altura + 1);
+
+        for (int i = 0; i < altura; i++) {
+            printf("   ");
+        }
+        printf("%d\n", no->valor);
+
+        verarvore(no->esquerda, altura + 1);
+    }
+}
