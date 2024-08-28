@@ -15,7 +15,8 @@ add_library(libprg
         src/libprg/pilha.c
         src/libprg/listas_encadeadas.c
         src/libprg/alg_ord_troca.c
-        src/libprg/arvore.c)
+        src/libprg/arvore.c
+        src/libprg/arvore_avl.c)
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)
 

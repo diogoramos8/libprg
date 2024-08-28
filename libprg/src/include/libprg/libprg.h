@@ -14,6 +14,7 @@
 typedef struct fila fila_t;
 typedef struct pilha pilha_t;
 typedef struct no no_t;
+typedef struct no_avl no_avl_t;
 typedef struct arvore arvore_t;
 ////lista
 //void criarlista(int **vetor, int tam);
@@ -75,6 +76,24 @@ void posorder(arvore_t *no);
 void percurso_largura(arvore_t *no, fila_t *fila);
 fila_t* criarfilaarvore(int capacidade);
 bool enfileirararvore(fila_t *fila, arvore_t *elemento);
+int altura(no_avl_t *v);
+int fator_balanceamento(no_avl_t *v);
+no_avl_t *rotacao_esquerda(no_avl_t *v);
+no_avl_t *rotacao_dupla_esquerda(no_avl_t *v);
+no_avl_t *rotacao_direita(no_avl_t *v);
+no_avl_t *rotacao_dupla_direita(no_avl_t *v);
+no_avl_t *balancear(no_avl_t *v);
+no_avl_t *removerb(no_avl_t *v, int valor);
+no_avl_t *criar_no_avl(int valor);
+no_avl_t *plantar_avl(int tam);
+no_avl_t *inserir(no_avl_t *v, int valor);
+void destruir_no_avl(no_avl_t *no);
+bool busca_avl(no_avl_t *raiz, int valor);
+int maiorarvore_avl(no_avl_t *no);
+int menorarvore_avl(no_avl_t *no);
+void inorder_avl(no_avl_t *no);
+void preorder_avl(no_avl_t *no);
+void posorder_avl(no_avl_t *no);
 #endif
 //#include <stdio.h>
 //#include <libprg/libprg.h>

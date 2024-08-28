@@ -2,12 +2,15 @@
 // Created by aluno on 31/07/24.
 //
 #include <libprg/libprg.h>
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+
 
 typedef struct arvore {
     int valor;
     struct arvore *esquerda;
     struct arvore *direita;
 } arvore_t;
+
 
 typedef struct fila{
     struct arvore *vetor;
@@ -181,6 +184,8 @@ void percurso_largura(arvore_t *no, fila_t *fila){
         *no = desinfileirarvore(fila);
     }
 }
+
+
 
 
 
